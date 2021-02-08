@@ -1,0 +1,31 @@
+<p-toast [baseZIndex]="10000" key="tst" position="top-center"></p-toast>
+<div class="main">
+  <header>
+    <a class="logo" href="#">
+      <h1>BnKS</h1>
+    </a>
+  </header>
+  <div class="toolbar">
+    <h2 id='title'>BnKS Project - System for generation and verification of OTP (TOTP/HOTP)</h2>
+    <a (click)="signout()" *ngIf="authenticated" class="signout" id="sign-out">
+      Sign Out
+    </a>
+  </div>
+  <nav>
+    <ul>
+      <li *ngIf="authenticated">
+        <a href="#">Home</a>
+      </li>
+    </ul>
+  </nav>
+  <main>
+    <ngx-loading-bar [fixed]="false" [includeSpinner]="false" height="8px"></ngx-loading-bar>
+    <router-outlet></router-outlet>
+  </main>
+  <footer>
+    <span>
+        2020 BnKS - TOTP/HOTP Project
+      </span>
+  </footer>
+</div>
+
